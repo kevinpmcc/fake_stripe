@@ -200,4 +200,11 @@ describe FakeStripe::StubApp do
       end
     end
   end
+
+  describe "POST /v1/payment_intents" do
+    it "returns a payment intent" do
+      result = Stripe::PaymentIntent.create
+      expect(result.object).to eq("payment_intent")
+    end
+  end
 end
