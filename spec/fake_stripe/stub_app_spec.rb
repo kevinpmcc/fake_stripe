@@ -207,4 +207,12 @@ describe FakeStripe::StubApp do
       expect(result.object).to eq("payment_intent")
     end
   end
+  
+  describe "GET /v1/payment_intents" do
+    it "returns a payment intent" do
+      result = Stripe::PaymentIntent.retrieve('123')
+      expect(result.object).to eq("payment_intent")
+    end
+  end
+
 end

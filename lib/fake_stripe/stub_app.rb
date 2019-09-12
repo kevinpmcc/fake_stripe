@@ -363,6 +363,10 @@ module FakeStripe
       json_response 200, fixture('retrieve_payment_intent')
     end
 
+    get '/v1/payment_intents/*' do
+      json_response 200, fixture('retrieve_payment_intent')
+    end
+
     private
 
     def fixture(file_name)
